@@ -1,11 +1,24 @@
 <?php get_header(); ?>
 
-<div class="bg-gray-100">
-    <div class="h-screen flex flex-col justify-center items-center">
-        <h1 class="text-8xl font-bold text-gray-800">404</h1>
-        <p class="text-4xl font-medium text-gray-800">Page Not Found</p>
-        <a href="/" class="mt-4 text-xl text-blue-600 hover:underline">Go back home</a>
+<main>
+    <div class="max-w-screen-xl mx-auto px-4 flex items-center justify-start h-screen md:px-8">
+        <div class="max-w-lg mx-auto space-y-3 text-center">
+            <h3 class="text-blue-600 font-semibold">
+                Erreur 404
+            </h3>
+            <p class="text-gray-800 text-4xl font-semibold sm:text-5xl">
+                Page non trouvée
+            </p>
+            <p class="text-gray-600">
+                Désolé, la page que vous recherchez est introuvable ou a été supprimée.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <a href="/" class="mt-4 block py-2 px-4 text-white font-medium bg-blue-600 duration-150 hover:bg-blue-500 active:bg-blue-700 rounded-lg">
+                    Accueil
+                </a>
+            </div>
+        </div>
     </div>
-</div>
+</main>
 
 <?php get_footer(); ?>
