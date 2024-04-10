@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
 <?php if (have_posts()) : ?>
-  <div class=" flex flex-col gap-4">
-    <div class="flex lg:flex-row flex-col">
+  <div class=" flex flex-col">
+    <div class="flex lg:flex-row flex-col flex-wrap justify-between">
       <?php while (have_posts()) : the_post(); ?>
         <?php get_template_part('partials/post'); ?>
       <?php endwhile; ?>

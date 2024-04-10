@@ -11,7 +11,6 @@
                             <img src="https://source.unsplash.com/75x75/?portrait" alt="" class="w-4 h-4 border rounded-full dark:bg-gray-500 dark:border-gray-700">
                             <p class="text-sm"><?= the_author(); ?> • <?php the_date(); ?></p>
                         </div>
-                        <p class="flex-shrink-0 mt-3 text-sm md:mt-0"><?= calculate_reading_time() ?> min de lecture</p>
                     </div>
                 </div>
                 <div class="dark:text-gray-100">

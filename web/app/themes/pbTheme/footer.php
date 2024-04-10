@@ -1,9 +1,9 @@
 </div>
 <footer class="bg-gray-100 mt-auto">
-    <section class="bg-gray-100 py-16">
+    <section class="bg-gray-100 py-8">
         <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col justify-center items-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">Rejoignez-nous</h2>
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Rejoignez-nous</h2>
                 <p class="text-center text-gray-500 leading-relaxed max-w-lg">
                     Découvrez nos opportunités de carrière et postulez dès aujourd'hui.
                 </p>
@@ -26,7 +26,7 @@
     </section>
     <span class="border-t border-gray-200 block"></span>
 
-    <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
 
 
         <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">

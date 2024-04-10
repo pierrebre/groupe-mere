@@ -58,7 +58,15 @@ function my_theme_enqueue_assets() {
     wp_enqueue_script('navbar-script', get_template_directory_uri() . '/assets/navbar/navbar.js', array(), '', true);
 }
 
+function custom_excerpt_length( $length ) {
+    return 20;
+}
 
+
+
+
+
+add_filter( 'excerpt_length', 'custom_excerpt_length' );
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_assets');
 add_action('after_setup_theme', 'pbTheme_setup');
 add_action('wp_enqueue_scripts', 'pbTheme_register_assets');

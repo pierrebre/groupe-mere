@@ -1,3 +1,4 @@
 <?php get_header(); ?>
-    <h1>Accueil</h1>
+
+<h1>Le groupe</h1>
 <?php get_footer(); ?>
