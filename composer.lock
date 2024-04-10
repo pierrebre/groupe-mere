@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8492a7382f55db09f185e2804fd22a08",
+    "content-hash": "a4fd70aff124952fbcdb73c2ee91f1a0",
     "packages": [
         {
             "name": "composer/installers",
@@ -354,49 +354,60 @@
             "time": "2023-11-28T15:52:46+00:00"
         },
         {
-            "name": "htmlburger/carbon-fields-plugin",
-            "version": "v3.6.3",
+            "name": "mnsami/composer-custom-directory-installer",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/htmlburger/carbon-fields-plugin.git",
-                "reference": "35e4524835863ff43671f14baecf7f263c16521a"
+                "url": "https://github.com/mnsami/composer-custom-directory-installer.git",
+                "reference": "85f66323978d0b1cb0e6acc7f69b3e7b912f82d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/htmlburger/carbon-fields-plugin/zipball/35e4524835863ff43671f14baecf7f263c16521a",
-                "reference": "35e4524835863ff43671f14baecf7f263c16521a",
+                "url": "https://api.github.com/repos/mnsami/composer-custom-directory-installer/zipball/85f66323978d0b1cb0e6acc7f69b3e7b912f82d9",
+                "reference": "85f66323978d0b1cb0e6acc7f69b3e7b912f82d9",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "^1.0|^2.0",
-                "htmlburger/carbon-fields": "3.6.3",
+                "composer-plugin-api": "^1.0 || ^2.0",
                 "php": ">=5.3"
             },
-            "type": "wordpress-plugin",
+            "type": "composer-plugin",
+            "extra": {
+                "class": [
+                    "Composer\\CustomDirectoryInstaller\\LibraryPlugin",
+                    "Composer\\CustomDirectoryInstaller\\PearPlugin",
+                    "Composer\\CustomDirectoryInstaller\\PluginPlugin"
+                ],
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
             "autoload": {
-                "psr-4": {
-                    "Carbon_Fields_Plugin\\": "core/"
+                "psr-0": {
+                    "Composer\\CustomDirectoryInstaller": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "atanas-angelov-dev",
-                    "email": "atanas.angelov.dev@gmail.com"
+                    "name": "Mina Nabil Sami",
+                    "email": "mina.nsami@gmail.com"
                 }
             ],
-            "description": "WordPress plugin loader for Carbon Fields.",
-            "homepage": "http://carbonfields.net/",
+            "description": "A composer plugin, to help install packages of different types in custom paths.",
+            "keywords": [
+                "composer",
+                "composer-installer",
+                "composer-plugin"
+            ],
             "support": {
-                "docs": "http://carbonfields.net/docs/",
-                "email": "wordpress@htmlburger.com",
-                "issues": "https://github.com/htmlburger/carbon-fields/issues",
-                "source": "https://github.com/htmlburger/carbon-fields"
+                "issues": "https://github.com/mnsami/composer-custom-directory-installer/issues",
+                "source": "https://github.com/mnsami/composer-custom-directory-installer/tree/2.0.0"
             },
-            "time": "2023-11-29T07:55:40+00:00"
+            "time": "2020-08-18T11:00:11+00:00"
         },
         {
             "name": "oscarotero/env",

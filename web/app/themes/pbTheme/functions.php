@@ -1,5 +1,9 @@
 <?php
 
+use Carbon_Fields\Container;
+use Carbon_Fields\Field;
+
+
 require_once('options/social-media.php');
 function pbTheme_setup()
 {
@@ -52,21 +56,27 @@ function pbTheme_navigation()
     }
     echo '</ol>';
 }
-function my_theme_enqueue_assets() {
+function my_theme_enqueue_assets()
+{
     wp_enqueue_style('navbar-styles', get_template_directory_uri() . '/assets/navbar/navbar.css');
 
     wp_enqueue_script('navbar-script', get_template_directory_uri() . '/assets/navbar/navbar.js', array(), '', true);
 }
 
-function custom_excerpt_length( $length ) {
+function custom_excerpt_length($length)
+{
     return 20;
 }
 
+function crb_load()
+{
+    require_once('vendor/autoload.php');
+    \Carbon_Fields\Carbon_Fields::boot();
+}
 
 
-
-
-add_filter( 'excerpt_length', 'custom_excerpt_length' );
+add_action('after_setup_theme', 'crb_load');
+add_filter('excerpt_length', 'custom_excerpt_length');
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_assets');
 add_action('after_setup_theme', 'pbTheme_setup');
 add_action('wp_enqueue_scripts', 'pbTheme_register_assets');
@@ -78,8 +88,48 @@ add_filter('wp_title', 'pbTheme_title_separator');
 
 // Register custom post types
 require_once('classes/marque.php');
+require_once('classes/job.php');
+
 
 $marque = new Marque();
 $marque->init();
 
+$job = new Job();
+$job->init();
 
+
+
+
+function crb_attach_job_meta()
+{
+    Container::make('post_meta', 'Détails de l\'offre')
+        ->where('post_type', '=', 'job')
+        ->add_fields([
+            Field::make('association', 'marque', 'Marque')
+                ->set_types(array(
+                    array(
+                        'type' => 'post',
+                        'post_type' => 'marque',
+                    ),
+                )) // Lié au custom post type Marque
+                ->set_max(1) // Un seul choix autorisé
+                ->set_help_text('Sélectionnez la marque associée à ce job')
+                ->set_required(true),
+            Field::make('text', 'job_salary', 'Salaire')
+                ->set_required(false),
+            Field::make('text', 'job_location', 'Lieux')
+                ->set_required(false),
+            Field::make('select', 'job_contract_type', 'Type de contrat')
+                ->add_options(array(
+                    'cdi' => 'CDI',
+                    'cdd' => 'CDD',
+                    'stage' => 'Stage',
+                    'freelance' => 'Freelance',
+                    'alternance' => 'Alternance',
+                    'interim' => 'Intérim',
+                ))
+                ->set_required(true)
+        ]);
+}
+
+add_action('carbon_fields_register_fields', 'crb_attach_job_meta');
