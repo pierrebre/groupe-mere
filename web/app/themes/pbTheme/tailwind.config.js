@@ -2,7 +2,15 @@
 module.exports = {
   content: ["./**/*.php"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'mint-green': '#bee9e8ff',
+        'moonstone': '#62b6cbff',
+        'indigo-dye': '#1b4965ff',
+        'columbia-blue': '#cae9ffff',
+        'picton-blue': '#25aae1ff',
+      },
+    },
   },
   plugins: [],
 }

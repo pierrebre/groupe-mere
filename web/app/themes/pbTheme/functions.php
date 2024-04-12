@@ -24,6 +24,7 @@ function pbTheme_setup()
     register_nav_menu('footer', 'Footer Menu');
 
     add_image_size('post-thumbnail', 350, 215, true);
+    add_image_size('marque-thumbnail', 50, 50, true);
 }
 
 function pbTheme_register_assets()
@@ -128,7 +129,30 @@ function crb_attach_job_meta()
                     'alternance' => 'Alternance',
                     'interim' => 'Intérim',
                 ))
-                ->set_required(true)
+                ->set_required(true),
+            Field::make('select', 'job_sector', 'Secteur d\'activité')
+                ->add_options(array(
+                    'informatique' => 'Informatique',
+                    'marketing' => 'Marketing',
+                    'communication' => 'Communication',
+                    'finance' => 'Finance',
+                    'comptabilite' => 'Comptabilité',
+                    'juridique' => 'Juridique',
+                    'ressources-humaines' => 'Ressources Humaines',
+                    'achat' => 'Achat',
+                    'logistique' => 'Logistique',
+                    'qualite' => 'Qualité',
+                    'production' => 'Production',
+                    'maintenance' => 'Maintenance',
+                    'recherche' => 'Recherche',
+                    'developpement' => 'Développement',
+                    'commercial' => 'Commercial',
+                    'vente' => 'Vente',
+                    'achat' => 'Achat',
+                    'distribution' => 'Distribution',
+                    'service-client' => 'Service Client',
+                    'relation-client' => 'Relation Client',
+                ))
         ]);
 }
 

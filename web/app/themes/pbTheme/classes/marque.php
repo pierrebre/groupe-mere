@@ -1,6 +1,4 @@
 <?php
-
-
 class Marque {
 
     public static function register()
@@ -35,7 +33,7 @@ class Marque {
             'hierarchical' => false,
             'menu_position' => 5,
             'supports' => ['title', 'editor', 'thumbnail'],
-            'menu_icon' => 'dashicons-admin-customizer'
+            'menu_icon' => 'dashicons-store'
         ];
 
         register_post_type('marque', $args);

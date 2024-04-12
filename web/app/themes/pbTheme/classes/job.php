@@ -26,7 +26,7 @@ class Job
             'public' => true,
             'publicly_queryable' => true,
             'show_ui' => true,
-            'show_in_menu' => true,
+            'show_in_menu' => false,
             'query_var' => true,
             'rewrite' => ['slug' => 'job'],
             'capability_type' => 'post',
@@ -34,7 +34,7 @@ class Job
             'hierarchical' => false,
             'menu_position' => 5,
             'supports' => ['title', 'editor', 'thumbnail'],
-            'menu_icon' => 'dashicons-admin-customizer'
+            'menu_icon' => 'dashicons-businessman'
         ];
 
         register_post_type('job', $args);
