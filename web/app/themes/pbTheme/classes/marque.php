@@ -1,4 +1,5 @@
 <?php
+
 class Marque {
 
     public static function register()

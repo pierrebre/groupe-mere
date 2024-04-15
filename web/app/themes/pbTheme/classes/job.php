@@ -26,13 +26,13 @@ class Job
             'public' => true,
             'publicly_queryable' => true,
             'show_ui' => true,
-            'show_in_menu' => false,
+            'show_in_menu' => true,
             'query_var' => true,
             'rewrite' => ['slug' => 'job'],
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'menu_position' => 5,
+            'menu_position' => 10,
             'supports' => ['title', 'editor', 'thumbnail'],
             'menu_icon' => 'dashicons-businessman'
         ];

@@ -106,32 +106,33 @@ function crb_attach_job_meta()
     Container::make('post_meta', 'Détails de l\'offre')
         ->where('post_type', '=', 'job')
         ->add_fields([
-            Field::make('association', 'marque', 'Marque')
-                ->set_types(array(
-                    array(
+            Field::make('association', 'job_marque', 'Marque')
+                ->set_types([
+                    [
                         'type' => 'post',
                         'post_type' => 'marque',
-                    ),
-                )) // Lié au custom post type Marque
+                    ],
+            ]) // Lié au custom post type Marque
                 ->set_max(1) // Un seul choix autorisé
                 ->set_help_text('Sélectionnez la marque associée à ce job')
                 ->set_required(true),
             Field::make('text', 'job_salary', 'Salaire')
+                ->set_attribute('type', 'number')
                 ->set_required(false),
             Field::make('text', 'job_location', 'Lieux')
                 ->set_required(false),
             Field::make('select', 'job_contract_type', 'Type de contrat')
-                ->add_options(array(
+                ->set_options([
                     'cdi' => 'CDI',
                     'cdd' => 'CDD',
                     'stage' => 'Stage',
                     'freelance' => 'Freelance',
                     'alternance' => 'Alternance',
                     'interim' => 'Intérim',
-                ))
+                ])
                 ->set_required(true),
             Field::make('select', 'job_sector', 'Secteur d\'activité')
-                ->add_options(array(
+                ->set_options([
                     'informatique' => 'Informatique',
                     'marketing' => 'Marketing',
                     'communication' => 'Communication',
@@ -152,7 +153,7 @@ function crb_attach_job_meta()
                     'distribution' => 'Distribution',
                     'service-client' => 'Service Client',
                     'relation-client' => 'Relation Client',
-                ))
+            ])
         ]);
 }
 
