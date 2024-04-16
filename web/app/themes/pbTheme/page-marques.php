@@ -18,8 +18,8 @@
             <?php while ($marques->have_posts()) : $marques->the_post(); ?>
                 <li class="border rounded-lg">
                     <div class="flex flex-col justify-center p-4 items-center h-[120px]">
-                        <?php the_post_thumbnail('marque-thumbnail', ['class' => 'object-cover full-rounded']) ?>
-                        <div class="space-y-2">
+                        <?php the_post_thumbnail('full', ['class' => '']) ?>
+                    <div class="space-y-2">
                             <h4 class="text-gray-800 font-semibold"><?php the_title(); ?></h4>
                             <p class="text-gray-600 text-sm"><?php the_excerpt() ?></p>
                         </div>

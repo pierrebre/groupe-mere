@@ -42,28 +42,21 @@
 
         <ul class="mt-12 flex justify-center gap-6 md:gap-8">
             <?php
-            // Tableau associatif des réseaux sociaux avec leurs liens et logos correspondants
-            $social_media = [
-                'facebook' => ['Facebook'],
-                'twitter' => ['Twitter'],
-                'instagram' => ['Instagram'],
-                'linkedin' => ['LinkedIn'],
-            ];
+            // Récupération des réseaux sociaux
+            $social_media = carbon_get_theme_option('social_media');
+            // Vérification si des réseaux sociaux sont disponibles
+            if ($social_media) {
+                foreach ($social_media as $social) {
+                    $name = $social['name'];
+                    $link = $social['link'];
+                    $icon_class = $social['logo']; // Utilisez la classe d'icône WordPress ici
 
-            // Parcourir chaque réseau social
-            foreach ($social_media as $network => $name) {
-                // Récupérer le lien et le logo du réseau social à partir des options de personnalisation
-                $link = get_theme_mod($network . '_link');
-                $logo = get_theme_mod($network . '_logo');
-
-                // Vérifier si le lien et le logo existent
-                if (!empty($link) && !empty($logo)) {
-                    echo '<li>';
-                    echo '<a href="' . esc_url($link) . '" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">';
-                    echo '<span class="sr-only">' . ucfirst($name[0]) . '</span>';
-                    echo wp_get_attachment_image($logo, 'full', false, ['class' => 'w-9 h-9']);
-                    echo '</a>';
-                    echo '</li>';
+                    // Assurez-vous que les données sont non vides avant de les afficher
+                    if ($name && $link && $icon_class) {
+                        echo '<a href="' . esc_url($link) . '" class="mr-4">';
+                        echo '<span class="dashicons ' . esc_attr($icon_class) . '"></span>';
+                        echo '</a>';
+                    }
                 }
             }
             ?>

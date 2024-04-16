@@ -3,8 +3,6 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-
-require_once('options/social-media.php');
 function pbTheme_setup()
 {
     // Add featured image support
@@ -24,7 +22,7 @@ function pbTheme_setup()
     register_nav_menu('footer', 'Footer Menu');
 
     add_image_size('post-thumbnail', 350, 215, true);
-    add_image_size('marque-thumbnail', 50, 50, true);
+    add_image_size('full', 225, 70, true);
 }
 
 function pbTheme_register_assets()
@@ -106,14 +104,11 @@ function crb_attach_job_meta()
     Container::make('post_meta', 'Détails de l\'offre')
         ->where('post_type', '=', 'job')
         ->add_fields([
-            Field::make('association', 'job_marque', 'Marque')
-                ->set_types([
-                    [
-                        'type' => 'post',
-                        'post_type' => 'marque',
-                    ],
-            ]) // Lié au custom post type Marque
-                ->set_max(1) // Un seul choix autorisé
+            Field::make('select', 'job_marque', 'Marque')
+                ->set_options(array_reduce(get_posts(['post_type' => 'marque']), function ($acc, $marque) {
+                    $acc[$marque->ID] = $marque->post_title;
+                    return $acc;
+                }, []))
                 ->set_help_text('Sélectionnez la marque associée à ce job')
                 ->set_required(true),
             Field::make('text', 'job_salary', 'Salaire')
@@ -153,7 +148,17 @@ function crb_attach_job_meta()
                     'distribution' => 'Distribution',
                     'service-client' => 'Service Client',
                     'relation-client' => 'Relation Client',
-            ])
+                ])
+        ]);
+
+
+    Container::make('theme_options', 'Options du thème')
+        ->add_fields([
+            Field::make('complex', 'social_media', 'Réseaux sociaux')
+                ->add_fields([
+                    Field::make('text', 'name', 'Nom'),
+                    Field::make('text', 'link', 'Lien'),
+                    Field::make('text', 'logo', 'Logo')])
         ]);
 }
 
