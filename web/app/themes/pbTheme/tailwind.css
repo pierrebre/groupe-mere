@@ -6,3 +6,42 @@ Theme Name: WordPress + Tailwind
 @tailwind components;
 @tailwind utilities;
 
+
+
+/* Styles for file input */
+.form-file {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+.form-file:focus {
+    border-color: #4a90e2;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
+
+/* Styles for textarea */
+.form-textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+.form-textarea:focus {
+    border-color: #4a90e2;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
+
+.wpcf7-form {
+    margin: 20px 0;
+}

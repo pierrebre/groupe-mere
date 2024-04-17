@@ -9,7 +9,7 @@
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
-                <a href="#" class="block bg-white shadow-md hover:shadow-lg rounded-lg py-4 px-6 text-center transition duration-300 ease-in-out">
+                <a href="/candidature-spontanee" class="block bg-white shadow-md hover:shadow-lg rounded-lg py-4 px-6 text-center transition duration-300 ease-in-out">
                     <div class="flex justify-center items-center mb-2">
                         <span class="text-gray-700 font-medium">Candidature spontanée</span>
                     </div>
