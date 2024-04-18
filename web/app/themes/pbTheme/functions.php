@@ -67,6 +67,11 @@ function custom_excerpt_length($length)
     return 20;
 }
 
+function enable_frontend_dashicons()
+{
+    wp_enqueue_style('dashicons');
+}
+
 function crb_load()
 {
     require_once('vendor/autoload.php');
@@ -80,7 +85,7 @@ add_action('wp_enqueue_scripts', 'my_theme_enqueue_assets');
 add_action('after_setup_theme', 'pbTheme_setup');
 add_action('wp_enqueue_scripts', 'pbTheme_register_assets');
 add_filter('wp_title', 'pbTheme_title_separator');
-
+add_action('wp_enqueue_scripts', 'enable_frontend_dashicons');
 
 
 
@@ -158,7 +163,8 @@ function crb_attach_job_meta()
                 ->add_fields([
                     Field::make('text', 'name', 'Nom'),
                     Field::make('text', 'link', 'Lien'),
-                    Field::make('text', 'logo', 'Logo')])
+                    Field::make('text', 'logo', 'Logo')
+                ])
         ]);
 }
 

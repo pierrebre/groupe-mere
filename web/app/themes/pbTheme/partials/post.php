@@ -1,13 +1,36 @@
-<article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg max-w-xs m-6">
-    <a href="<?php the_permalink() ?>">
-        <?php the_post_thumbnail('post-thumbnail', ['class' => 'w-full object-cover']) ?>
-        <div class="bg-white p-4 sm:p-6">
-            <time datetime="2022-10-10" class="block text-xs text-gray-500"> <?php the_date(); ?> </time>
-            <h3 class="mt-0.5 text-lg text-gray-900"><?php the_title()  ?></h3>
-            <?php the_terms(get_the_ID(), 'sport', '<div class="mt-2 text-xs text-gray-500">', ', ', '</div>') ?>
-            <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+<article class="flex flex-col items-start justify-between">
+    <div class="relative w-full">
+        <?php the_post_thumbnail('post-thumbnail', ['class' => 'aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]']) ?>
+        <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+    </div>
+    <div class="max-w-xl">
+        <div class="mt-8 flex items-center gap-x-4 text-xs">
+            <time datetime="2020-03-16" class="text-gray-500"><?php the_date(); ?> </time>
+            <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
+        </div>
+        <div class="group relative">
+            <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                <a href="<?php the_permalink() ?>">
+                    <span class="absolute inset-0"></span>
+                    <?php the_title()  ?>
+                </a>
+            </h3>
+            <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
                 <?php the_excerpt() ?>
             </p>
         </div>
-    </a>
+        <div class="relative mt-8 flex items-center gap-x-4">
+            <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-10 w-10 rounded-full bg-gray-100">
+            <div class="text-sm leading-6">
+                <p class="font-semibold text-gray-900">
+                    <a href="#">
+                        <span class="absolute inset-0"></span>
+                        Michael Foster
+                    </a>
+                </p>
+                <p class="text-gray-600">Co-Founder / CTO</p>
+
+            </div>
+        </div>
+    </div>
 </article>
