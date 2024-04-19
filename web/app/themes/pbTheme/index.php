@@ -3,11 +3,15 @@
   <h1 class="text-gray-800 text-xl font-extrabold sm:text-2xl text-center">Actualités</h1>
   <?php if (have_posts()) : ?>
     <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        <?php while (have_posts()) : the_post(); ?>
-          <?php get_template_part('partials/post'); ?>
-        <?php endwhile; ?>
-        <?php pbTheme_navigation() ?>
+      <?php while (have_posts()) : the_post(); ?>
+        <?php get_template_part('partials/post'); ?>
+      <?php endwhile; ?>
+      <?php wp_reset_postdata(); ?>
     </div>
+    <div class="py-8">
+      <?php pbTheme_navigation() ?>
+    </div>
+
   <?php else : ?>
     <p><?php esc_html_e('Désolé, aucun article ne correspond à vos critères.'); ?></p>
     <div class="inline-flex rounded-lg border border-gray-100 bg-gray-100 p-1 text-center">

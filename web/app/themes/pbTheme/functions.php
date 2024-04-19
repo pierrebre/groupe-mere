@@ -44,7 +44,7 @@ function pbTheme_navigation()
     if ($pages === null) return;
     echo '<ol class="flex justify-center gap-1 text-xs font-medium my-3">';
     foreach ($pages as $page) {
-        $class = 'block size-8 rounded border border-gray-100 bg-white text-center leading-8';
+        $class = 'block h-8 rounded border border-gray-100 bg-white w-20 text-center leading-8';
         // Ajoute la classe bg-gray-300 si c'est la page actuelle
         if (strpos($page, 'rounded border-blue-600 bg-blue-600 text-center leading-8 text-white') !== false) {
             $class .= ' bg-gray-300';
