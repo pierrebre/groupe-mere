@@ -119,7 +119,7 @@ function crb_attach_job_meta()
             Field::make('text', 'job_salary', 'Salaire')
                 ->set_attribute('type', 'number')
                 ->set_required(false),
-            Field::make('text', 'job_location', 'Lieux')
+            Field::make('text', 'job_location', 'Lieu')
                 ->set_required(false),
             Field::make('select', 'job_contract_type', 'Type de contrat')
                 ->set_options([
