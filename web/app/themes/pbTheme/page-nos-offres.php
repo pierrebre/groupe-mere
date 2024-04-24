@@ -180,7 +180,7 @@ get_header();
                 <div class="flex flex-col pt-8 min-w-96 w-full">
                     <div class="flex flex-col items-center justify-center gap-4">
                         <p class="text-center text-gray-500">
-                            Aucune n'a été trouvée
+                            Aucune offre n'a été trouvée
                         </p>
                     </div>
                 </div>
