@@ -1,39 +1,4 @@
 <?php
-function time_elapsed_string($datetime, $full = false)
-{
-  if (is_null($datetime)) {
-    return "Aucune date";
-  }
-  
-  $now = new DateTime;
-  $ago = new DateTime($datetime);
-  $diff = $now->diff($ago);
-
-  $diff->w = floor($diff->d / 7);
-  $diff->d -= $diff->w * 7;
-
-  $string = array(
-    'y' => 'année',
-    'm' => 'mois',
-    'w' => 'semaine',
-    'd' => 'jour',
-    'h' => 'heure',
-    'i' => 'minute',
-    's' => 'seconde',
-  );
-  foreach ($string as $k => &$v) {
-    if ($diff->$k) {
-      $v = $diff->$k . ' ' . $v . ($diff->$k > 1 && $v != 'mois' ? 's' : '');
-    } else {
-      unset($string[$k]);
-    }
-  }
-
-  if (!$full)
-    $string = array_slice($string, 0, 1);
-
-  return $string ? 'Il y a ' . implode(', ', $string) : 'À l\'instant';
-}
 
 $job_contract_type = get_post_meta(get_the_ID(), '_job_contract_type', true);
 $job_location = get_post_meta(get_the_ID(), '_job_location', true);
@@ -69,21 +34,19 @@ $query = $args['query'];
     <div class="flex flex-row items-center bg-gray-100 rounded px-2 py-1 w-fit">
       <span class="dashicons dashicons-building text-sm"></span>
       <p class="text-xs">
-        <?php
-        echo find_marque($job_marque);
+        <?= find_marque($job_marque);
         ?>
       </p>
     </div>
     <div class="flex flex-row items-center bg-gray-100 rounded px-2 py-1 w-fit">
       <span class="dashicons dashicons-location text-sm"></span>
       <p class="text-xs">
-        <?php
-        echo $job_location;
+        <?= $job_location;
         ?>
       </p>
     </div>
   </div>
   <p class="mt-1 text-xs text-gray-500">
-    <?php echo time_elapsed_string($query->post->post_date); ?>
+    <?= time_elapsed_string($query->post->post_date); ?>
   </p>
 </a>

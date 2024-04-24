@@ -83,6 +83,44 @@ function crb_load()
 }
 
 
+function time_elapsed_string($datetime, $full = false)
+{
+  if (is_null($datetime)) {
+    return "Aucune date";
+  }
+  
+  $now = new DateTime;
+  $ago = new DateTime($datetime);
+  $diff = $now->diff($ago);
+
+  $diff->w = floor($diff->d / 7);
+  $diff->d -= $diff->w * 7;
+
+  $string = array(
+    'y' => 'année',
+    'm' => 'mois',
+    'w' => 'semaine',
+    'd' => 'jour',
+    'h' => 'heure',
+    'i' => 'minute',
+    's' => 'seconde',
+  );
+  foreach ($string as $k => &$v) {
+    if ($diff->$k) {
+      $v = $diff->$k . ' ' . $v . ($diff->$k > 1 && $v != 'mois' ? 's' : '');
+    } else {
+      unset($string[$k]);
+    }
+  }
+
+  if (!$full)
+    $string = array_slice($string, 0, 1);
+
+  return $string ? 'Il y a ' . implode(', ', $string) : 'À l\'instant';
+}
+
+
+
 add_action('after_setup_theme', 'crb_load');
 add_filter('excerpt_length', 'custom_excerpt_length');
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_assets');

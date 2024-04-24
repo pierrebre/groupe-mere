@@ -105,10 +105,9 @@ get_header();
 ?>
 
 <section class="w-full py-16">
-    <h1 class=" text-6xl font-bold text-center mb-8">Nos offres</h1>
-    <div class="flex flex-col md:flex-row gap-4">
-        <div
-            class="flex flex-col gap-2 md:border md:border-gray-200 md:shadow md:rounded-md py-4 md:p-4 h-fit md:sticky md:top-12">
+    <h1 class="text-gray-800 text-xl font-extrabold sm:text-2xl text-center">Nos offres</h1>
+    <div class="flex flex-col md:flex-row gap-4 mt-4">
+        <div class="flex flex-col gap-2 md:border md:border-gray-200 md:shadow md:rounded-md py-4 md:p-4 h-fit md:sticky md:top-12">
 
             <div class="flex flex-col gap-1">
                 <label for="marque">Marque</label>
@@ -124,7 +123,7 @@ get_header();
             <div class="flex flex-col gap-1">
                 <label for="type">Type</label>
                 <select class="w-full border border-gray-300 rounded-md p-1 h-[34px]" id="type">
-                    <?php foreach ($contract_types as $key => $value): ?>
+                    <?php foreach ($contract_types as $key => $value) : ?>
                         <option value="<?= $key ?>" <?php selected($key, $_GET['type'] ?? ''); ?>><?= $value ?></option>
                     <?php endforeach; ?>
                 </select>
@@ -132,7 +131,7 @@ get_header();
             <div class="flex flex-col gap-1">
                 <label for="type">Secteur d'activité</label>
                 <select class="w-full border border-gray-300 rounded-md p-1 h-[34px]" id="secteur">
-                    <?php foreach ($business_lines as $key => $value): ?>
+                    <?php foreach ($business_lines as $key => $value) : ?>
                         <option value="<?= $key ?>" <?php selected($key, $_GET['secteur'] ?? ''); ?>><?= $value ?>
                         </option>
                     <?php endforeach; ?>
@@ -140,18 +139,15 @@ get_header();
             </div>
             <div class="flex flex-col gap-1">
                 <label for="salaire_min">Salaire min</label>
-                <input type="number" class="w-full border border-gray-300 rounded-md p-1" id="salaire_min"
-                    placeholder="0" value="<?php echo $_GET['salaire_min'] ?? ''; ?>" />
+                <input type="number" class="w-full border border-gray-300 rounded-md p-1" id="salaire_min" placeholder="0" value="<?php echo $_GET['salaire_min'] ?? ''; ?>" />
             </div>
             <div class="flex flex-col gap-1">
                 <label for="salaire_max">Salaire max</label>
-                <input type="number" class="w-full border border-gray-300 rounded-md p-1" id="salaire_max"
-                    placeholder="100000" value="<?php echo $_GET['salaire_max'] ?? ''; ?>" />
+                <input type="number" class="w-full border border-gray-300 rounded-md p-1" id="salaire_max" placeholder="100000" value="<?php echo $_GET['salaire_max'] ?? ''; ?>" />
             </div>
             <div class="flex flex-col gap-1">
                 <label for="location">Lieu</label>
-                <input type="text" class="w-full border border-gray-300 rounded-md p-1" id="location" placeholder="Tous"
-                    value="<?php echo $_GET['location'] ?? ''; ?>" />
+                <input type="text" class="w-full border border-gray-300 rounded-md p-1" id="location" placeholder="Tous" value="<?php echo $_GET['location'] ?? ''; ?>" />
             </div>
 
 
@@ -168,14 +164,14 @@ get_header();
 
         <div class="flex flex-col gap-4 w-full">
             <?php
-            if ($query->have_posts()):
-                while ($query->have_posts()):
+            if ($query->have_posts()) :
+                while ($query->have_posts()) :
                     $query->the_post();
 
                     get_template_part('partials/job-card', null, array('query' => $query));
-                    ?>
+            ?>
                 <?php endwhile;
-            else:
+            else :
                 ?>
                 <div class="flex flex-col pt-8 min-w-96 w-full">
                     <div class="flex flex-col items-center justify-center gap-4">
@@ -184,7 +180,7 @@ get_header();
                         </p>
                     </div>
                 </div>
-                <?php
+            <?php
             endif;
             ?>
         </div>
