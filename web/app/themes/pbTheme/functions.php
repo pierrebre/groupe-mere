@@ -41,7 +41,8 @@ function pbTheme_title_separator()
 function pbTheme_navigation()
 {
     $pages = paginate_links(['type' => 'array']);
-    if ($pages === null) return;
+    if ($pages === null)
+        return;
     echo '<ol class="flex justify-center gap-1 text-xs font-medium my-3">';
     foreach ($pages as $page) {
         $class = 'block h-8 rounded border border-gray-100 bg-white w-20 text-center leading-8';
@@ -60,6 +61,9 @@ function my_theme_enqueue_assets()
     wp_enqueue_style('navbar-styles', get_template_directory_uri() . '/assets/navbar/navbar.css');
 
     wp_enqueue_script('navbar-script', get_template_directory_uri() . '/assets/navbar/navbar.js', array(), '', true);
+
+    if (is_page('nos-offres'))
+        wp_enqueue_script('job-filter-script', get_template_directory_uri() . '/assets/job/filter.js', array(), '', true);
 }
 
 function custom_excerpt_length($length)
@@ -74,7 +78,7 @@ function enable_frontend_dashicons()
 
 function crb_load()
 {
-    require_once('vendor/autoload.php');
+    require_once ('vendor/autoload.php');
     \Carbon_Fields\Carbon_Fields::boot();
 }
 
@@ -91,8 +95,8 @@ add_action('wp_enqueue_scripts', 'enable_frontend_dashicons');
 
 
 // Register custom post types
-require_once('classes/marque.php');
-require_once('classes/job.php');
+require_once ('classes/marque.php');
+require_once ('classes/job.php');
 
 
 $marque = new Marque();
@@ -169,3 +173,24 @@ function crb_attach_job_meta()
 }
 
 add_action('carbon_fields_register_fields', 'crb_attach_job_meta');
+
+function format_price($int)
+{
+    $fmt = new NumberFormatter('fr_FR', NumberFormatter::CURRENCY);
+
+    $price = $fmt->formatCurrency($int, 'EUR');
+    $price_without_decimals = str_replace(',00', '', $price);
+
+    return $price_without_decimals;
+}
+
+function find_marque($marque_id)
+{
+    $marques = get_posts(['post_type' => 'marque']);
+    $marques_arr = array_reduce($marques, function ($acc, $marque) {
+        $acc[$marque->ID] = $marque->post_title;
+        return $acc;
+    }, []);
+
+    return $marques_arr[$marque_id];
+}
