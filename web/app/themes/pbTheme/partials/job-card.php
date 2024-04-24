@@ -1,6 +1,10 @@
 <?php
 function time_elapsed_string($datetime, $full = false)
 {
+  if (is_null($datetime)) {
+    return "Aucune date";
+  }
+  
   $now = new DateTime;
   $ago = new DateTime($datetime);
   $diff = $now->diff($ago);
