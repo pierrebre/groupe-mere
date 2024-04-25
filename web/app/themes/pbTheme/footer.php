@@ -15,7 +15,7 @@
                     </div>
                     <p class="text-gray-600">Postulez pour des opportunités qui vous intéressent.</p>
                 </a>
-                <a href="#" class="block bg-white shadow-md hover:shadow-lg rounded-lg py-3 px-5 text-center transition duration-300 ease-in-out">
+                <a href="/nos-offres" class="block bg-white shadow-md hover:shadow-lg rounded-lg py-3 px-5 text-center transition duration-300 ease-in-out">
                     <div class="flex justify-center items-center mb-1">
                         <span class="text-gray-700 font-medium">Nos offres</span>
                     </div>

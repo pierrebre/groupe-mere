@@ -2,6 +2,7 @@
 
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
+require_once('walker/MenuWalker.php');
 
 function pbTheme_setup()
 {
@@ -78,45 +79,45 @@ function enable_frontend_dashicons()
 
 function crb_load()
 {
-    require_once ('vendor/autoload.php');
+    require_once('vendor/autoload.php');
     \Carbon_Fields\Carbon_Fields::boot();
 }
 
 
 function time_elapsed_string($datetime, $full = false)
 {
-  if (is_null($datetime)) {
-    return "Aucune date";
-  }
-  
-  $now = new DateTime;
-  $ago = new DateTime($datetime);
-  $diff = $now->diff($ago);
-
-  $diff->w = floor($diff->d / 7);
-  $diff->d -= $diff->w * 7;
-
-  $string = array(
-    'y' => 'année',
-    'm' => 'mois',
-    'w' => 'semaine',
-    'd' => 'jour',
-    'h' => 'heure',
-    'i' => 'minute',
-    's' => 'seconde',
-  );
-  foreach ($string as $k => &$v) {
-    if ($diff->$k) {
-      $v = $diff->$k . ' ' . $v . ($diff->$k > 1 && $v != 'mois' ? 's' : '');
-    } else {
-      unset($string[$k]);
+    if (is_null($datetime)) {
+        return "Aucune date";
     }
-  }
 
-  if (!$full)
-    $string = array_slice($string, 0, 1);
+    $now = new DateTime;
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
 
-  return $string ? 'Il y a ' . implode(', ', $string) : 'À l\'instant';
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $string = array(
+        'y' => 'année',
+        'm' => 'mois',
+        'w' => 'semaine',
+        'd' => 'jour',
+        'h' => 'heure',
+        'i' => 'minute',
+        's' => 'seconde',
+    );
+    foreach ($string as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 && $v != 'mois' ? 's' : '');
+        } else {
+            unset($string[$k]);
+        }
+    }
+
+    if (!$full)
+        $string = array_slice($string, 0, 1);
+
+    return $string ? 'Il y a ' . implode(', ', $string) : 'À l\'instant';
 }
 
 
@@ -133,9 +134,8 @@ add_action('wp_enqueue_scripts', 'enable_frontend_dashicons');
 
 
 // Register custom post types
-require_once ('classes/marque.php');
-require_once ('classes/job.php');
-
+require_once('classes/marque.php');
+require_once('classes/job.php');
 
 $marque = new Marque();
 $marque->init();
