@@ -156,7 +156,7 @@ get_header();
 
 
             <div class="flex flex-row items-center gap-4">
-                <button id="btn-filter" class="bg-gray-900 text-white font-bold py-2 px-4 rounded-md w-full">
+                <button id="btn-filter" class="bg-picton-blue text-white font-bold py-2 px-4 rounded-md w-full">
                     Filtrer
                 </button>
                 <a href="/nos-offres" class="text-gray-800 hover:text-gray-900 underline text-center w-full">
