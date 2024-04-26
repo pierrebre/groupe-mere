@@ -10,7 +10,7 @@ $query = $args['query'];
 ?>
 
 <a href="<?php the_permalink() ?>"
-  class="flex w-full flex-col bg-white rounded-lg shadow border border-gray-200 px-8 py-4 gap-2">
+  class="flex w-full min-w-80 flex-col bg-white rounded-lg shadow border border-gray-200 px-8 py-4 gap-2">
   <p class="text-xl">
     <?php the_title(); ?>
   </p>
