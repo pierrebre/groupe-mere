@@ -73,9 +73,7 @@ Theme Name: WordPress + Tailwind
   margin: 20px 0;
 }
 
-#job-content ol,
-ul,
-menu {
+#job-content ol,#job-content ul,#job-content menu {
   list-style: disc;
   margin: 0.75rem 1rem;
   padding-inline-start: 1rem;
