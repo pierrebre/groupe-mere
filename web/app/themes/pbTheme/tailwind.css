@@ -7,6 +7,33 @@ Theme Name: WordPress + Tailwind
 @tailwind utilities;
 
 
+@layer base{
+    @font-face {
+        font-family: 'Amulya';
+        font-style: bold;
+        font-weight: 700;
+        font-display: swap;
+        src: url(/web/app/themes/pbTheme/assets/fonts/amulya-bold-webfont.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Synonym';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(/web/app/themes/pbTheme/assets/fonts/synonym-regular-webfont.woff2) format('woff2');
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Amulya', sans-serif;
+        font-weight: 700;
+    }
+
+    p, a, li, label, input, textarea, select, button {
+        font-family: 'Synonym', sans-serif;
+        font-weight: 400;
+    }
+}
 
 /* Styles for file input */
 .form-file {

@@ -23,7 +23,7 @@ function pbTheme_setup()
     register_nav_menu('footer', 'Footer Menu');
 
     add_image_size('post-thumbnail', 350, 215, true);
-    add_image_size('full', 225, 70, true);
+    add_image_size('full', 900, 1200, false);
 }
 
 function pbTheme_register_assets()

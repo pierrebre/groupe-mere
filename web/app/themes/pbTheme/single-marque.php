@@ -25,7 +25,7 @@ the_post(); ?>
             quidem quam repellat.
         </p>
 
-        <?php the_post_thumbnail('full', ['class' => '']) ?>
+        <?php the_post_thumbnail('2048x2048', ['class' => 'w-2/6']) ?>
     </div>
     <div class="flex flex-col gap-4 mt-12 mb-8">
         <p class="text-2xl text-center lg:text-start">
