@@ -11,5 +11,5 @@ $job_sector = get_post_meta(get_the_ID(), '_job_sector', true);
   <?= get_template_part('partials/tag', null, array('icon' => 'dashicons-media-document', 'content' => $job_contract_type, 'class' => 'uppercase')); ?>
   <?= get_template_part('partials/tag', null, array('icon' => 'dashicons-money-alt', 'content' => $job_salary ? format_price($job_salary) : 'Non spécifié')); ?>
   <?= get_template_part('partials/tag', null, array('icon' => 'dashicons-building', 'content' => find_marque($job_marque_id))); ?>
-  <?= get_template_part('partials/tag', null, array('icon' => 'dashicons-location', 'content' => $job_location ?? 'Non spécifié')); ?>
+  <?= get_template_part('partials/tag', null, array('icon' => 'dashicons-location', 'content' => $job_location ? $job_location : 'Non spécifié')); ?>
 </div>
