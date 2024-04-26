@@ -104,7 +104,7 @@ $query = get_offers();
 get_header();
 ?>
 
-<section class="w-full py-16">
+<section class="mx-auto w-fit py-16">
     <h1 class="text-gray-800 text-xl font-extrabold sm:text-2xl text-center">Nos offres</h1>
     <div class="flex flex-col md:flex-row gap-4 mt-4">
         <div
@@ -166,7 +166,7 @@ get_header();
 
         </div>
 
-        <div class="flex flex-col gap-4 w-full">
+        <div class="flex flex-col gap-4 w-fit">
             <?php
             if ($query->have_posts()):
                 while ($query->have_posts()):
