@@ -6,72 +6,77 @@ Theme Name: WordPress + Tailwind
 @tailwind components;
 @tailwind utilities;
 
-
-
 /* Styles for file input */
 .form-file {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-bottom: 1rem;
 }
 
 .form-file:focus {
-    border-color: #4a90e2;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+  border-color: #4a90e2;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
 }
 
 /* Styles for textarea */
 .form-textarea {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-bottom: 1rem;
 }
 
 .form-textarea:focus {
-    border-color: #4a90e2;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+  border-color: #4a90e2;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
 }
 
 /* Styles for form inputs */
 .form-input {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-bottom: 1rem;
 }
 
 .form-input:focus {
-    border-color: #4a90e2;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+  border-color: #4a90e2;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
 }
 .custom-submit-button {
-    background-color: #1b4965ff; /* Couleur indigo-dye */
-    color: #fff; /* Couleur du texte blanc */
-    border: none; /* Supprime la bordure */
-    padding: 0.5rem 1rem; /* Ajoute du rembourrage autour du texte */
-    border-radius: 0.25rem; /* Ajoute un arrondi aux coins */
-    transition: background-color 0.3s ease; /* Ajoute une transition fluide */
+  background-color: #1b4965ff; /* Couleur indigo-dye */
+  color: #fff; /* Couleur du texte blanc */
+  border: none; /* Supprime la bordure */
+  padding: 0.5rem 1rem; /* Ajoute du rembourrage autour du texte */
+  border-radius: 0.25rem; /* Ajoute un arrondi aux coins */
+  transition: background-color 0.3s ease; /* Ajoute une transition fluide */
 }
 
 .custom-submit-button:hover {
-    background-color: #cae9ffff; /* Couleur columbia-blue au survol */
+  background-color: #cae9ffff; /* Couleur columbia-blue au survol */
 }
 
-
 .wpcf7-form {
-    margin: 20px 0;
+  margin: 20px 0;
+}
+
+#job-content ol,
+ul,
+menu {
+  list-style: disc;
+  margin: 0.75rem 1rem;
+  padding-inline-start: 1rem;
 }
