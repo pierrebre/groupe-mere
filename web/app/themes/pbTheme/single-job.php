@@ -21,7 +21,7 @@ get_header();
 
     <div class="flex flex-row items-center gap-x-4 overflow-auto py-4">
         <?php
-        $relatedPosts = new WP_Query([
+        $relatedJobs = new WP_Query([
             'posts_per_page' => 3,
             'orderby' => 'rand',
             'post_type' => 'job',
@@ -35,14 +35,17 @@ get_header();
             ),
         ]);
 
-        if ($relatedPosts->have_posts()):
-            while ($relatedPosts->have_posts()):
-                $relatedPosts->the_post();
+        if ($relatedJobs->have_posts()):
+            while ($relatedJobs->have_posts()):
+                $relatedJobs->the_post();
 
-                get_template_part('partials/job-card', null, array('query' => $relatedPosts));
+                get_template_part('partials/job-card', null, array('query' => $relatedJobs));
             endwhile;
-        endif;
-        ?>
+        else: ?>
+            <p class="text-center text-gray-500">
+                Aucune autre offre de la marque n'a été trouvée
+            </p>
+        <?php endif; ?>
     </div>
 </section>
 
