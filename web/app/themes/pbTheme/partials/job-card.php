@@ -14,14 +14,7 @@ $query = $args['query'];
   <p class="text-xl">
     <?php the_title(); ?>
   </p>
-  <div class="flex flex-row flex-wrap gap-2">
-    <div class="flex flex-row flex-wrap gap-2 mt-1">
-      <?= get_template_part('partials/tag', null, array('content' => $job_contract_type, 'class' => 'uppercase')); ?>
-      <?= get_template_part('partials/tag', null, array('content' => format_price($job_salary))); ?>
-      <?= get_template_part('partials/tag', null, array('content' => find_marque($job_marque_id))); ?>
-      <?= get_template_part('partials/tag', null, array('content' => $job_location)); ?>
-    </div>
-  </div>
+  <?= get_template_part('partials/job_tags', null, array('class' => 'mt-1')); ?>
   <p class="mt-1 text-xs text-gray-500">
     <?= time_elapsed_string($query->post->post_date); ?>
   </p>
