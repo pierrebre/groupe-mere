@@ -3,7 +3,7 @@
 $job_contract_type = get_post_meta(get_the_ID(), '_job_contract_type', true);
 $job_location = get_post_meta(get_the_ID(), '_job_location', true);
 $job_salary = get_post_meta(get_the_ID(), '_job_salary', true);
-$job_marque = get_post_meta(get_the_ID(), '_job_marque', true);
+$job_marque_id = get_post_meta(get_the_ID(), '_job_marque', true);
 $job_sector = get_post_meta(get_the_ID(), '_job_sector', true);
 
 $query = $args['query'];
@@ -15,35 +15,11 @@ $query = $args['query'];
     <?php the_title(); ?>
   </p>
   <div class="flex flex-row flex-wrap gap-2">
-    <div class="flex flex-row items-center bg-gray-100 rounded px-2 py-1 w-fit">
-      <span class="dashicons dashicons-media-document text-sm"></span>
-      <p class="uppercase text-xs">
-        <?php
-        echo $job_contract_type;
-        ?>
-      </p>
-    </div>
-    <div class="flex flex-row items-center bg-gray-100 rounded px-2 py-1 w-fit">
-      <span class="dashicons dashicons-money-alt text-sm"></span>
-      <p class="text-xs">
-        <?php
-        echo format_price($job_salary);
-        ?>
-      </p>
-    </div>
-    <div class="flex flex-row items-center bg-gray-100 rounded px-2 py-1 w-fit">
-      <span class="dashicons dashicons-building text-sm"></span>
-      <p class="text-xs">
-        <?= find_marque($job_marque);
-        ?>
-      </p>
-    </div>
-    <div class="flex flex-row items-center bg-gray-100 rounded px-2 py-1 w-fit">
-      <span class="dashicons dashicons-location text-sm"></span>
-      <p class="text-xs">
-        <?= $job_location;
-        ?>
-      </p>
+    <div class="flex flex-row flex-wrap gap-2 mt-8">
+      <?= get_template_part('partials/tag', null, array('content' => $job_contract_type, 'class' => 'uppercase')); ?>
+      <?= get_template_part('partials/tag', null, array('content' => format_price($job_salary))); ?>
+      <?= get_template_part('partials/tag', null, array('content' => find_marque($job_marque_id))); ?>
+      <?= get_template_part('partials/tag', null, array('content' => $job_location)); ?>
     </div>
   </div>
   <p class="mt-1 text-xs text-gray-500">
