@@ -10,12 +10,12 @@ $query = $args['query'];
 ?>
 
 <a href="<?php the_permalink() ?>"
-  class="flex w-full min-w-80 flex-col bg-white rounded-lg shadow border border-gray-200 px-8 py-4 gap-2">
+  class="flex w-full min-w-80 max-w-xl flex-col bg-white rounded-lg shadow border border-gray-200 px-8 py-4 gap-2">
   <p class="text-xl">
     <?php the_title(); ?>
   </p>
   <div class="flex flex-row flex-wrap gap-2">
-    <div class="flex flex-row flex-wrap gap-2 mt-8">
+    <div class="flex flex-row flex-wrap gap-2 mt-1">
       <?= get_template_part('partials/tag', null, array('content' => $job_contract_type, 'class' => 'uppercase')); ?>
       <?= get_template_part('partials/tag', null, array('content' => format_price($job_salary))); ?>
       <?= get_template_part('partials/tag', null, array('content' => find_marque($job_marque_id))); ?>
