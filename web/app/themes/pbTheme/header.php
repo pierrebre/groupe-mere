@@ -12,7 +12,7 @@ use pbTheme\walker\MenuWalker;
     <?php wp_head(); ?>
 </head>
 
-<body class="h-screen flex flex-col">
+<body class="h-screen flex flex-col overflow-x-hidden">
     <header>
         <nav class="bg-white shadow z-10">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

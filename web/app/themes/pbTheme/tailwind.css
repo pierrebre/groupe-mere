@@ -91,7 +91,8 @@ Theme Name: WordPress + Tailwind
   border: none; /* Supprime la bordure */
   padding: 0.5rem 1rem; /* Ajoute du rembourrage autour du texte */
   border-radius: 0.25rem; /* Ajoute un arrondi aux coins */
-  transition: background-color 0.3s ease; /* Ajoute une transition fluide */
+  transition: background-color 0.5s ease; /* Ajoute une transition fluide */
+  cursor: pointer; /* Change le curseur en main */
 }
 
 .custom-submit-button:hover {
