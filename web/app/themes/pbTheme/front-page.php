@@ -16,7 +16,7 @@
                     <span class="rounded-full bg-indigo-dye/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-dye ring-1 ring-inset ring-indigo-600/10">aliqua ad</span>
                 </a>
             </div>
-            <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Qui irure qui lorem cupidatat commodo</h1>
+            <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Expert en Distribution Spécialisée</h1>
             <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
             <div class="mt-10 flex items-center gap-x-6">
                 <a href="#" class="bg-indigo-dye text-white border-none px-4 py-2 rounded-md duration-500 ease-in-out hover:bg-columbia-blue">fugiat aliqua</a>

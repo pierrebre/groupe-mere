@@ -17,12 +17,10 @@ the_post(); ?>
 
 <section class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
     <h2 class="mt-8 text-3xl font-bold sm:text-4xl text-center lg:text-start"><?= the_title() ?></h2>
-    <div class="flex flex-col-reverse lg:flex-row mt-4 lg:mt-0 gap-2 items-center justify-between">
+    <div class="flex flex-col mt-4 lg:mt-0 gap-8 items-left justify-between">
 
         <p class="mt-4 text-gray-600 text-justify lg:text-start">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic atque tenetur quis
-            eius quos ea neque sunt, accusantium soluta minus veniam tempora deserunt? Molestiae eius
-            quidem quam repellat.
+            <?= the_content() ?>
         </p>
 
         <?php the_post_thumbnail('2048x2048', ['class' => 'w-2/6']) ?>

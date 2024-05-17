@@ -9,6 +9,8 @@ module.exports = {
         'indigo-dye': '#1b4965ff',
         'columbia-blue': '#cae9ffff',
         'picton-blue': '#25aae1ff',
+        'start-gradient': '#274046',
+        'end-gradient': '#E6DADA',
       },
     },
   },
