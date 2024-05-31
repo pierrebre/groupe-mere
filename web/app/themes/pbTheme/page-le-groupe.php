@@ -1,124 +1,95 @@
 <?php get_header(); ?>
-</div>
-<div class="text-center bg-gradient-to-r from-indigo-dye to-picton-blue text-white py-20 mb-12">
-    <h1 class="text-5xl font-bold">Qui sommes-nous ?</h1>
+
 </div>
 
-<main class="">
-    <div class="container mx-auto px-4 py-8">
-
-        <!-- Introduction Section -->
-        <section class="text-center mb-12">
-            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-                <h2 class="text-3xl font-bold mb-6">Bienvenue sur la page de présentation du Groupe Méré</h2>
-                <p class="text-lg text-gray-700">Nous sommes un acteur majeur dans la distribution spécialisée, regroupant plusieurs franchises de renom. Notre mission est d'offrir des produits et services de qualité à nos clients tout en développant des partenariats stratégiques et en attirant les meilleurs talents.</p>
-            </div>
-        </section>
-
-        <!-- History Section -->
-        <section class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-100 py-12 px-6 rounded-lg shadow-lg">
-            <div>
-                <h2 class="text-3xl font-bold mb-6">Notre Histoire</h2>
-                <h3 class="text-2xl font-semibold mb-4">Une Histoire de Passion et d'Innovation</h3>
-                <p class="text-lg text-gray-700">Depuis sa création, le Groupe Méré a toujours misé sur l'innovation et la qualité pour se démarquer dans le secteur de la distribution spécialisée. Au fil des années, nous avons su diversifier nos activités et étendre notre réseau de franchises pour répondre aux besoins variés de nos clients.</p>
-            </div>
-            <div class="flex items-center justify-center">
-                <img src="<?= esc_url(wp_get_attachment_image_url(136, 'full')); ?>" alt="Image représentant l'histoire du Groupe Méré" class="rounded-lg shadow-lg">
-            </div>
-        </section>
-
-        <!-- Values Section -->
-        <section class="mb-12 bg-white py-12">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold">Nos Valeurs</h2>
-                <h3 class="text-2xl font-semibold text-gray-700">Nos Valeurs Fondamentales</h3>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-black">
-                    <h4 class="text-xl font-semibold mb-2">Qualité</h4>
-                    <p>Nous nous engageons à offrir des produits et services de haute qualité pour satisfaire nos clients.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-black">
-                    <h4 class="text-xl font-semibold mb-2">Innovation</h4>
-                    <p>L'innovation est au cœur de notre stratégie, nous permettant d'améliorer constamment nos offres.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-black">
-                    <h4 class="text-xl font-semibold mb-2">Proximité</h4>
-                    <p>Nous valorisons la proximité avec nos clients, partenaires et collaborateurs.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-black">
-                    <h4 class="text-xl font-semibold mb-2">Responsabilité</h4>
-                    <p>Nous agissons de manière responsable et durable, en respectant l'environnement et les communautés locales.</p>
-                </div>
-            </div>
-        </section>
+<div class="relative bg-white py-24 sm:py-32 lg:py-40">
+    <div class="absolute inset-0 overflow-hidden">
+        <img class="absolute inset-0 h-full w-full object-cover" src="https://picsum.photos/1600/900" alt="">
+        <div class="absolute inset-0 bg-gradient-to-r from-indigo-700 to-indigo-900 opacity-75"></div>
     </div>
-    <!-- Franchises Section -->
-    <section class="mb-12 bg-gray-100 py-12">
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold">Nos Franchises</h2>
-            <h3 class="text-2xl font-semibold text-gray-700">Un Réseau de Franchises Diversifié</h3>
-            <h4 class="text-xl font-medium text-gray-700">Découvrez les enseignes qui composent le Groupe Méré</h4>
-        </div>
-        <ul class="grid grid-cols-1 md:grid-cols-3 gap-8 px-16">
-            <?php $marques = new WP_Query([
-                'post_type' => 'marque',
-                'posts_per_page' => -1
-            ]); ?>
-            <?php while ($marques->have_posts()) : $marques->the_post(); ?>
-                <li class="border rounded-lg bg-white shadow-lg">
-                    <div class="flex flex-col justify-center p-4 items-center h-[120px]">
-                        <?php /* the_post_thumbnail('2048x2048', ['class' => '']) */ ?>
-                        <div class="space-y-2 text-center">
-                            <h4 class="text-gray-800 font-semibold"><?php the_title(); ?></h4>
-                            <p class="text-gray-600 text-sm"><?php the_excerpt() ?></p>
-                        </div>
-                    </div>
-                    <div class="py-2 px-2 border-t text-center">
-                        <a href="<?php the_permalink(); ?>" class="text-picton-blue hover:text-indigo-dye text-sm font-medium">
-                            Découvrir
-                        </a>
-                    </div>
-                </li>
-            <?php endwhile; ?>
-        </ul>
-    </section>
-    <div class="container mx-auto px-4 py-8">
-        <!-- Partners Section -->
-<!--         <section class="mb-12 bg-white py-12">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold">Nos Partenaires</h2>
-                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Partenariats Stratégiques</h3>
-                <p class="text-lg text-gray-700 mb-6">Le succès du Groupe Méré repose également sur des partenariats solides et stratégiques avec des acteurs clés du secteur. Ces collaborations nous permettent de renforcer notre réseau et d'innover continuellement.</p>
-                <ul class="list-disc pl-5 space-y-2 mx-auto max-w-2xl text-left">
-                    <li class="text-lg text-gray-700">Collaboration avec des fournisseurs de renommée mondiale.</li>
-                    <li class="text-lg text-gray-700">Projets conjoints avec des entreprises leaders pour développer de nouvelles solutions.</li>
-                </ul>
-            </div>
-        </section> -->
+    <div class="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
+        <h1 class="text-5xl font-bold text-white">Le Groupe Méré</h1>
+    </div>
+</div>
 
-        <!-- Career Opportunities Section -->
-        <section class="mb-12 text-center bg-gray-100 py-12">
-            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-                <h2 class="text-3xl font-bold mb-6">Opportunités de Carrière</h2>
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">Rejoignez-nous</h3>
-                <p class="text-lg text-gray-700 mb-6">Le Groupe Méré est toujours à la recherche de nouveaux talents pour rejoindre ses équipes dynamiques. Nous offrons des opportunités de carrière enrichissantes dans un environnement stimulant.</p>
-                <ul class="list-disc pl-5 space-y-2 text-left inline-block">
-                    <li class="text-lg text-gray-700">Un environnement de travail innovant et motivant.</li>
-                    <li class="text-lg text-gray-700">Des opportunités de développement et de progression de carrière.</li>
-                    <li class="text-lg text-gray-700">Une culture d'entreprise axée sur l'excellence et la collaboration.</li>
-                </ul>
-                <a href="#" class="mt-6 inline-block hover:bg-picton-blue text-white py-3 px-6 rounded-lg shadow-lg bg-indigo-dye">Découvrir les Offres d'Emploi</a>
+<main>
+    <div class="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <!-- Introduction Section -->
+        <section class="mb-12">
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg">
+                <h2 class="text-3xl font-bold mb-6 text-center">Découvrez le Groupe Méré</h2>
+                <p class="text-lg text-gray-700 text-justify">Le Groupe Méré est un acteur majeur dans la distribution spécialisée avec des franchises reconnues telles que La Halle au Sommeil, Foir'Fouille et Cavavin. Nous sommes dédiés à offrir des produits et services de qualité à nos clients tout en adoptant des pratiques responsables.</p>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="mb-12 text-center bg-white py-12">
-            <div class="max-w-2xl mx-auto bg-gray-100 p-8 rounded-lg shadow-lg">
-                <h2 class="text-3xl font-bold mb-6">Contact</h2>
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">Prenez Contact avec Nous</h3>
-                <p class="text-lg text-gray-700 mb-6">Nous serions ravis de vous entendre. Pour toute demande d'information, de partenariat ou pour en savoir plus sur nos opportunités de carrière, n'hésitez pas à nous contacter.</p>
-                <a href="#" class="hover:bg-picton-blue text-white py-3 px-6 rounded-lg shadow-lg bg-indigo-dye">Accéder au Formulaire de Contact</a>
+        <!-- Section Franchise -->
+        <section class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <img src="https://picsum.photos/400/300" alt="La Halle au Sommeil" class="w-full h-56 object-cover rounded-lg mb-6">
+                <h3 class="text-2xl font-bold mb-4 text-center">La Halle au Sommeil</h3>
+                <p class="text-lg text-gray-700 text-justify">Des magasins spécialisés dans la vente de matelas et accessoires pour un sommeil de qualité.</p>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <img src="https://picsum.photos/401/300" alt="Foir'Fouille" class="w-full h-56 object-cover rounded-lg mb-6">
+                <h3 class="text-2xl font-bold mb-4 text-center">Foir'Fouille</h3>
+                <p class="text-lg text-gray-700 text-justify">Des magasins discount proposant une large gamme de produits pour la maison.</p>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <img src="https://picsum.photos/402/300" alt="Cavavin" class="w-full h-56 object-cover rounded-lg mb-6">
+                <h3 class="text-2xl font-bold mb-4 text-center">Cavavin</h3>
+                <p class="text-lg text-gray-700 text-justify">Des caves à vins offrant une sélection variée de vins et spiritueux de qualité.</p>
+            </div>
+        </section>
+
+        <!-- Engagements Section -->
+        <section class="text-center mb-12">
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg">
+                <h2 class="text-3xl font-bold mb-6">Nos Engagements</h2>
+                <p class="text-lg text-gray-700 text-justify">Chez le Groupe Méré, nous nous engageons à respecter des principes forts qui guident chacune de nos actions. Notre objectif est de créer un environnement de travail sain et équitable tout en adoptant des pratiques responsables pour préserver notre planète.</p>
+            </div>
+        </section>
+
+        <!-- Employer Responsibility Section -->
+        <section class="mb-12 bg-white py-12 px-6 rounded-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Notre Responsabilité Employeur</h2>
+                    <h3 class="text-2xl font-semibold mb-4">Nous croyons fermement que nos employés sont notre plus grande richesse.</h3>
+                    <p class="text-lg text-gray-700 text-justify">Nous nous engageons à offrir un environnement de travail inclusif, sécurisé et stimulant. Nos politiques de ressources humaines sont conçues pour promouvoir l'égalité des chances, le développement professionnel et le bien-être de chaque membre de notre équipe.</p>
+                    <ul class="list-disc pl-5 space-y-4 text-lg text-gray-700 text-justify">
+                        <li><strong>Environnement de Travail Inclusif :</strong> Promotion de la diversité et de l'inclusion.</li>
+                        <li><strong>Développement Professionnel :</strong> Programmes de formation continue et opportunités de carrière.</li>
+                        <li><strong>Bien-être des Employés :</strong> Initiatives pour un équilibre entre vie professionnelle et vie personnelle.</li>
+                    </ul>
+                    <a href="#" class="mt-6 inline-block bg-indigo-dye ease-in-out text-white py-3 px-6 rounded-lg  hover:bg-picton-blue">En savoir plus sur Notre Responsabilité Employeur</a>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="https://picsum.photos/600/400" alt="Responsabilité Employeur" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Responsible Initiatives Section -->
+        <section class="mb-12 bg-white py-12 px-6 rounded-lg">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold">Nos Démarches Responsables</h2>
+                <h3 class="text-2xl font-semibold text-gray-700">Le Groupe Méré s'engage à adopter des pratiques responsables et durables dans toutes ses activités.</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-lg text-gray-700 mb-6 text-justify">Nous mettons en place des initiatives écologiques, réduisons notre empreinte carbone et encourageons une consommation responsable. Chaque action que nous entreprenons est pensée pour minimiser notre impact sur l'environnement et contribuer positivement à la société.</p>
+                    <ul class="list-disc pl-5 space-y-4 text-lg text-gray-700 text-justify">
+                        <li><strong>Initiatives Écologiques :</strong> Réduction des déchets, recyclage et utilisation de matériaux durables.</li>
+                        <li><strong>Réduction de l'Empreinte Carbone :</strong> Optimisation des transports et des chaînes d'approvisionnement.</li>
+                        <li><strong>Consommation Responsable :</strong> Sensibilisation et promotion de produits durables auprès de nos clients.</li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="https://picsum.photos/601/400" alt="Démarches Responsables" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="mt-6 inline-block bg-indigo-dye ease-in-out text-white py-3 px-6 rounded-lg shadow-lg hover:bg-picton-blue">En savoir plus sur Nos Démarches Responsables</a>
             </div>
         </section>
     </div>
