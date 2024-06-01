@@ -12,7 +12,7 @@
         <h1 class="text-5xl font-bold text-white">Rejoignez le Groupe Méré</h1>
         <p class="mt-4 text-lg text-gray-200">Développez votre carrière avec nous et faites partie d'une équipe dynamique et innovante.</p>
         <a href="/candidature-spontanee" class="inline-block bg-indigo-dye ease-in-out duration-500 text-white py-3 px-6 rounded-md hover:bg-picton-blue">Candidature Spontanée</a>
-        <a href="#job-openings" class="mt-6 inline-block bg-indigo-dye ease-in-out duration-500 text-white py-3 px-6 rounded-md hover:bg-picton-blue">Voir les Offres</a>
+        <a href="/nos-offres" class="mt-6 inline-block bg-indigo-dye ease-in-out duration-500 text-white py-3 px-6 rounded-md hover:bg-picton-blue">Voir les Offres</a>
     </div>
 </div>
 

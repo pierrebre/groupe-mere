@@ -61,7 +61,7 @@
                         <li><strong>Développement Professionnel :</strong> Programmes de formation continue et opportunités de carrière.</li>
                         <li><strong>Bien-être des Employés :</strong> Initiatives pour un équilibre entre vie professionnelle et vie personnelle.</li>
                     </ul>
-                    <a href="#" class="mt-6 inline-block bg-indigo-dye ease-in-out text-white py-3 px-6 rounded-lg  hover:bg-picton-blue">En savoir plus sur Notre Responsabilité Employeur</a>
+                    <a href="#" class="mt-6 inline-block bg-indigo-dye  text-white py-3 px-6 rounded-lg ease-in-out duration-500  hover:bg-picton-blue">En savoir plus sur Notre Responsabilité Employeur</a>
                 </div>
                 <div class="flex items-center justify-center">
                     <img src="https://picsum.photos/600/400" alt="Responsabilité Employeur" class="rounded-lg shadow-lg">
@@ -89,7 +89,7 @@
                 </div>
             </div>
             <div class="text-center mt-8">
-                <a href="#" class="mt-6 inline-block bg-indigo-dye ease-in-out text-white py-3 px-6 rounded-lg shadow-lg hover:bg-picton-blue">En savoir plus sur Nos Démarches Responsables</a>
+                <a href="#" class="mt-6 inline-block bg-indigo-dye ease-in-out duration-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-picton-blue">En savoir plus sur Nos Démarches Responsables</a>
             </div>
         </section>
     </div>

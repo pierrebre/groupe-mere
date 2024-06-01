@@ -19,8 +19,8 @@
             <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Groupe Méré</h1>
             <p class="mt-6 text-lg leading-8 text-gray-600">Le Groupe Méré, expert en distribution spécialisée, regroupe des franchises comme La Halle au Sommeil, Foir'Fouille et Cavavin. Renforcez votre visibilité en ligne avec nous.</p>
             <div class="mt-10 flex items-center gap-x-6">
-                <a href="#" class="bg-indigo-dye text-white border-none px-4 py-2 rounded-md duration-500 ease-in-out hover:bg-indigo-700">Nos Activités</a>
-                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Découvrir plus <span aria-hidden="true">→</span></a>
+                <a href="/marques" class="bg-indigo-dye text-white border-none px-4 py-2 rounded-md duration-500 ease-in-out hover:bg-indigo-700">Nos Activités</a>
+                <a href="/le-groupe" class="text-sm font-semibold leading-6 text-gray-900">Découvrir plus <span aria-hidden="true">→</span></a>
             </div>
         </div>
         <div class="mt-16 lg:mt-0 lg:ml-10 lg:flex lg:items-center lg:justify-end">
@@ -57,7 +57,7 @@
         <h2 class="text-3xl font-bold text-gray-900 text-center">Opportunités de Carrière</h2>
         <p class="mt-4 text-gray-600 text-center">Rejoignez le Groupe Méré et développez votre carrière dans un environnement dynamique et innovant.</p>
         <div class="mt-10 flex justify-center">
-            <a href="#" class="bg-indigo-dye text-white border-none px-4 py-2 rounded-md duration-500 ease-in-out hover:bg-picton-blue">Voir les Offres d'Emploi</a>
+            <a href="/nos-offres" class="bg-indigo-dye text-white border-none px-4 py-2 rounded-md duration-500 ease-in-out  hover:bg-picton-blue">Voir les Offres d'Emploi</a>
         </div>
     </div>
 </div>
@@ -66,10 +66,24 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-gray-900 text-center">Actualités</h2>
         <p class="mt-4 text-gray-600 text-center">Découvrez les dernières actualités et mises à jour du Groupe Méré.</p>
-        <div class="mt-10 grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
-            <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('partials/post'); ?>
-            <?php endwhile; ?>
+        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            <?php
+            $args = [
+                'posts_per_page' => 3,
+                'post_status' => 'publish',
+                'orderby' => 'date',
+                'order' => 'DESC'
+            ];
+            $posts = new WP_Query($args);
+            ?>
+            <?php if ($posts->have_posts()) : ?>
+                <?php while ($posts->have_posts()) : $posts->the_post(); ?>
+                    <?php get_template_part('partials/post'); ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php else : ?>
+                <p><?php esc_html_e('Désolé, aucun article ne correspond à vos critères.'); ?></p>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -79,7 +93,7 @@
         <h2 class="text-3xl font-bold text-gray-900 text-center">Contactez-nous</h2>
         <p class="mt-4 text-gray-600 text-center">Pour toute demande d'information ou de partenariat, n'hésitez pas à nous contacter via le formulaire ci-dessous.</p>
         <div class="mt-10 flex justify-center">
-            <a href="#" class="bg-indigo-dye text-white border-none px-4 py-2 rounded-md duration-500 ease-in-out hover:bg-picton-blue">Formulaire de Contact</a>
+            <a href="/contact" class="bg-indigo-dye text-white border-none px-4 py-2 rounded-md duration-500 ease-in-out hover:bg-picton-blue">Formulaire de Contact</a>
         </div>
     </div>
 </div>
