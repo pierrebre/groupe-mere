@@ -2,7 +2,6 @@
 <section class="py-16 lg:min-w-[800px] mx-auto w-fit">
   <h1 class="text-gray-800 text-xl font-extrabold sm:text-2xl text-center"><?php the_title() ?></h1>
   <div class="text-gray-800">
-    <h2 class="text-2xl font-bold mt-8">Nos Démarches Responsables</h2>
     <p class="mt-4">Chez le Groupe Méré, nous croyons en la nécessité d’adopter des pratiques responsables et durables dans toutes nos activités. Nous nous engageons à protéger l’environnement, à réduire notre empreinte carbone et à encourager une consommation responsable. Voici comment nous mettons en œuvre ces engagements au quotidien.</p>
 
     <h3 class="text-xl font-semibold mt-6">Initiatives Écologiques</h3>
